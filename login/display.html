@@ -1,0 +1,176 @@
+{% load static %}
+<!---import pandas pd
+	#df['b'] = df['a'].apply(lambda x:HTML('vendor/bootstrap/css/bootstrap.min.css'.format(x)))--->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Get Data</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico'%}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script type="javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'vendor/animate/animate.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static '/vendor/css-hamburgers/hamburgers.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/util.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/main.css'%}">
+<!--===============================================================================================-->
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">IIMT College of Engineering</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                    <li><a href = "cart.php"><span class = "glyphicon glyphicon-log-in"></span> View Request </a></li>
+                    <li><a href = "settings.php"><span class = "glyphicon glyphicon-user"></span>Fetch Data</a></li>
+                    <li><a href = "logout_script.php"><span class = "glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+					<span class="login100-form-title">
+             Details are here:
+					</span>
+<div class="container">
+    <div class="col-lg-6">
+              <img src="{{ image }}" class="img-responsive" height="200" width="200">
+         <!-- <img src="{#%static '\images\default.jpg' %#}" class="img-circle" height="200" width="200">-->
+          </div>
+
+        			<div class="col-xs-8 col-lg-6">
+                        <div class="row">
+							<div class="col-xs-6 col-lg-3">Name</div>
+							<div class="col-xs-6 col-lg-4">{{ name }}</div>
+
+						</div>
+<hr>
+						<div class="row">
+							<div class="col-xs-6 col-lg-3">Admission no:</div>
+							<div class="col-xs-6 col-lg-4">{{ admn }}</div>
+						</div>
+<hr>
+                        <div class="row">
+							<div class="col-xs-6 col-lg-3">Course: </div>
+							<div class="col-xs-6 col-lg-4">{{ course }}</div>
+						</div>
+<hr>
+                        <div class="row">
+							<div class="col-xs-6 col-lg-3">Branch: </div>
+							<div class="col-xs-6 col-lg-4">{{ branch }}</div>
+						</div>
+<hr>
+                         <div class="row">
+							<div class="col-xs-6 col-lg-3">Year: </div>
+							<div class="col-xs-6 col-lg-4">{{ year }}</div>
+						</div>
+<hr>
+                        <div class="row">
+							<div class="col-xs-6 col-lg-3">Room Number:</div>
+							<div class="col-xs-6 col-lg-4">{{ room_no }}</div>
+						</div>
+<hr>
+                        <div class="row">
+							<div class="col-xs-6 col-lg-3"> Block:</div>
+							<div class="col-xs-6 col-lg-4">{{ block }}</div>
+						</div>
+<hr>
+                        <div class="row">
+							<div class="col-xs-6 col-lg-3">Contact:</div>
+							<div class="col-xs-6 col-lg-4">{{ contact }}</div>
+						</div>
+<hr>
+                        <div class="row">
+							<div class="col-xs-6 col-lg-3">Parent's Contact:</div>
+							<div class="col-xs-6 col-lg-4">{{ p_no }}</div>
+						</div>
+    </div>
+    </div>
+
+                    <span class="login100-form-title">
+             <br>Other Details:
+					</span>
+                <form method="post">
+                <span>
+                    <div class="wrap-input100 validate-input" >
+                        Time-Out
+						<input class="input100" type="time" name="time-out" placeholder="Time-Out">
+						<span class="focus-input100"></span>
+					</div>
+
+
+                    <div class="wrap-input100 validate-input">
+                        Date-In
+						<input class="input100" type="date" name="date-in" placeholder="Date-In">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input">
+                        Time-In
+						<input class="input100" type="time" name="time-in" placeholder="Time-In">
+						<span class="focus-input100"></span>
+					</div>
+
+                </span>
+
+                <span>
+                    <div class="container-login100-form-btn">
+						<button class="login100-form-btn" value="allow" name="allow" formaction="/allow/">
+							Allow
+						</button>
+					</div>
+
+                    <div class="container-login100-form-btn">
+						<button class="login100-form-btn" value="refuse" name="refuse" formaction="/refuse/">
+							Refuse
+						</button>
+					</div>
+                </span>
+                </form>
+			</div>
+		</div>
+	<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAZA4gUvaOJf817zs3pHPE38ZcJp8lTn3A",
+
+    authDomain: "iimt-hostel-dc91e.firebaseapp.com",
+    databaseURL: "https://iimt-hostel-dc91e.firebaseio.com",
+    projectId: "iimt-hostel-dc91e",
+    storageBucket: "",
+    messagingSenderId: "344340173967"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<!--===============================================================================================-->
+	<script src={%  static "vendor/jquery/jquery-3.2.1.min.js"%}></script>
+<!--===============================================================================================-->
+	<script src={%  static "vendor/bootstrap/js/popper.js"%}></script>
+	<script src={%  static "vendor/bootstrap/js/bootstrap.min.js"%}></script>
+<!--===============================================================================================-->
+	<script src={%  static "vendor/select2/select2.min.js"%}></script>
+<!--===============================================================================================-->
+	<script src={%  static "vendor/tilt/tilt.jquery.min.js"%}></script>
+<!--===============================================================================================-->
+	<script src={%  static "js/main.js"%}></script>
+</body>
+</html>

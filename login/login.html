@@ -1,20 +1,48 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Login_next</title>#}
+{##}
+{##}
+{#</head>#}
+{#<body>#}
+{#<h1>HEY!!!!    {{ e }}</h1>#}
+{##}
+{##}
+{#<form>#}
+{##}
+{#						<button  value="fetch" name="fetch" formaction="/fetch/">#}
+{#							FETCH DATA#}
+{#						</button>#}
+{#</form>#}
+{##}
+{#</body>#}
+{#</html>#}
 
 {% if msg %}
 <script>
     alert('{{ msg }}');
 </script>
 {% endif %}
+
+{% if mssg %}
+<script>
+    alert('{{ mssg }}');
+</script>
+{% endif %}
 {% load static %}
+
 <!---import pandas pd
 	#df['b'] = df['a'].apply(lambda x:HTML('vendor/bootstrap/css/bootstrap.min.css'.format(x)))--->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Login V1</title>
+	<title>Logged User</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico'%}">
 
     <!---<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -42,45 +70,32 @@
 
 				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-title">
-
-                        Security Login
+						Welcome {{ e }}
 					</span>
 
-					<div class="wrap-input100 validate-input" >
-						<input class="input100" type="email" name="User_id" placeholder="User ID">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
+
+
+
+{#					<div class="container-login100-form-btn">#}
+{#						<button class="login100-form-btn" value="send_data" name="send_data" formaction="/send_data/">#}
+{#							Send Data#}
+{#						</button>#}
+{#					</div>#}
+
+                    <div class="container-login100-form-btn">
+						<button class="login100-form-btn" value="admno" name="admno" formaction="/admno/">
+							Request
+						</button>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="Password" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" value="login" name="login" formaction="/login/">
-							Login
+                    <div class="container-login100-form-btn">
+						<button class="login100-form-btn" value="fetch_data" name="fetch_data" formaction="/fetch_data/">
+							Fetch Data
 						</button>
 					</div>
 
 
-                  <!---  <div class="text-center p-t-12">
-						<span class="txt1">
-                        </span>
-                    </div>--->
-					<!--<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="#">
-							Username / Password?
-						</a>
-					</div>-->
+
 
 
 					<div class="text-center p-t-136">
@@ -111,8 +126,8 @@
   firebase.initializeApp(config);
 </script>
 
-	
-<!--===============================================================================================-->	
+
+<!--===============================================================================================-->
 	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="static/vendor/bootstrap/js/popper.js"></script>
