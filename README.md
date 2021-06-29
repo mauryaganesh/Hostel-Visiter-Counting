@@ -1,1 +1,2 @@
-Hostel visitor counting web application using Python-Django framework with HTML, CSS and Bootstrap for User Interface and MySQL and Firebase for database management.
+#Hostel Visitor Counting
+Measure your visitor traffic with our hostel people counter to have an accurate count of people that visited your hostel.
